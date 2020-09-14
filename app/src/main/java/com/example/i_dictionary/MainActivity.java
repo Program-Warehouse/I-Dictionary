@@ -14,7 +14,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
-    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

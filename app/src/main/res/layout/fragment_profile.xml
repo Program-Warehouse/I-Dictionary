@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/main_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
     <RelativeLayout
+        android:id="@+id/login_layout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="20dp"
@@ -29,7 +32,7 @@
         <ImageView
             android:layout_width="125dp"
             android:layout_height="72dp"
-            android:src="@drawable/ic_thumb_up_black_18dp"
+            app:srcCompat="@drawable/ic_thumb_up_black_18dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"/>
     </RelativeLayout>
@@ -44,7 +47,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <RelativeLayout
-                android:id="@+id/removeadslayout"
+                android:id="@+id/removeads_layout"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/layout_bg_removeads">
@@ -80,35 +83,39 @@
                         android:layout_height="30dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_keyboard_arrow_right_white_18dp"
+                        app:srcCompat="@drawable/ic_keyboard_arrow_right_white_18dp"
                         android:layout_alignParentRight="true" />
                 </RelativeLayout>
 
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_height="60dp">
                 <ImageView
-                    android:id="@+id/offline_package"
+                    android:id="@+id/offline_package_img"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
+                    android:id="@+id/offline_package_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Offline Package"
-                    android:layout_toRightOf="@id/offline_package"
+                    android:layout_toRightOf="@id/offline_package_img"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp"
+                    android:layout_toEndOf="@id/offline_package_img"
+                    android:layout_marginStart="15dp" />
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -118,7 +125,7 @@
                     android:id="@+id/display_language"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -134,7 +141,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -144,7 +151,7 @@
                     android:id="@+id/my_words"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,7 +167,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -170,7 +177,7 @@
                     android:id="@+id/settings"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -186,7 +193,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -196,7 +203,7 @@
                     android:id="@+id/rate_it"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -212,18 +219,18 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/feedback_layout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:onClick="FeedbackActivity">
+                android:layout_height="60dp">
                 <ImageView
                     android:id="@+id/feedback"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -239,7 +246,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -249,7 +256,7 @@
                     android:id="@+id/satisfaction_survey"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -266,7 +273,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -276,7 +283,7 @@
                     android:id="@+id/share_with_friends"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -292,7 +299,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
             <RelativeLayout
@@ -302,7 +309,7 @@
                     android:id="@+id/privacy_policy"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_centerVertical="true"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -318,7 +325,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:alpha="0.5"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_18dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
         </LinearLayout>
