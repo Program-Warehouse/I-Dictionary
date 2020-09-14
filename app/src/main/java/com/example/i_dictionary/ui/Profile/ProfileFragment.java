@@ -20,7 +20,6 @@ public class ProfileFragment extends Fragment {
         dashboardViewModel =
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
-
         return root;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.i_dictionary;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
