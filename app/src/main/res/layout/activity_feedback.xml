@@ -39,7 +39,7 @@
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="0dp"
-        android:layout_height="132dp"
+        android:layout_height="150dp"
         android:layout_marginStart="23dp"
         android:layout_marginLeft="23dp"
         android:layout_marginEnd="23dp"
@@ -49,23 +49,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="1.0">
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:columnCount="2"
-            android:columnOrderPreserved="true"
-            android:rowCount="2"
-            android:rowOrderPreserved="true">
-
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="100dp"
-                android:layout_marginBottom="30dp"
                 android:text="Feature"
+                android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
 
             <RadioButton
@@ -73,14 +62,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Interface"
+                android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
 
             <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="Bug"
+                android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
 
             <RadioButton
@@ -88,8 +78,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Other"
+                android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
-        </GridLayout>
     </RadioGroup>
 
     <EditText
@@ -132,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
         android:layout_marginLeft="23dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="18dp"
         android:textSize="18sp"
         android:text="Type:"
         app:layout_constraintStart_toStartOf="@+id/view"

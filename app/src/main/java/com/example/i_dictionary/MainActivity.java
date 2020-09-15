@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         StatusBarUtil.setTransparent(MainActivity.this);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
