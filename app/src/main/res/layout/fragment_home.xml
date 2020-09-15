@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -31,7 +32,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/selected_language1"
                 android:layout_toRightOf="@id/selected_language1"
-                android:src="@drawable/ic_keyboard_arrow_down_white_18dp" />
+                app:srcCompat="@drawable/ic_keyboard_arrow_down_white_18dp" />
 
             <ImageView
                 android:id="@+id/selected_language2_arrow"
@@ -40,7 +41,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_keyboard_arrow_down_white_18dp" />
+                app:srcCompat="@drawable/ic_keyboard_arrow_down_white_18dp" />
 
             <TextView
                 android:id="@+id/selected_language2"
@@ -57,7 +58,7 @@
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_thumb_up_black_18dp"/>
+                app:srcCompat="@drawable/ic_thumb_up_black_18dp"/>
         </RelativeLayout>
         <LinearLayout
             tools:targetApi="LOLLIPOP"
@@ -71,20 +72,23 @@
             android:layout_marginRight="15dp"
             android:background="@drawable/bg_main_wordsearch_view" >
             <RelativeLayout
+                android:id="@+id/enter_word_or_sentance_layout"
                 android:layout_width="match_parent"
                 android:layout_height="150dp">
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_thumb_up_black_18dp"
+                    app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="35dp"
                     android:layout_marginRight="20dp"/>
                 <EditText
+                    android:id="@+id/enter_word_or_sentance_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="70dp"
+                    android:textCursorDrawable="@color/colorPrimary"
                     android:background="#ffffff"
                     android:text="Enter Words or Sentences"
                     android:alpha="0.5"
@@ -102,7 +106,7 @@
                         android:id="@+id/camera_icon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/ic_thumb_up_black_18dp"
+                        app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                         android:layout_centerHorizontal="true"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -119,7 +123,7 @@
                         android:id="@+id/conversation_icon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/ic_thumb_up_black_18dp"
+                        app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                         android:layout_centerHorizontal="true"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -136,7 +140,7 @@
                         android:id="@+id/grammar_icon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/ic_thumb_up_black_18dp"
+                        app:srcCompat="@drawable/ic_thumb_up_black_18dp"
                         android:layout_centerHorizontal="true"/>
                     <TextView
                         android:layout_width="wrap_content"
