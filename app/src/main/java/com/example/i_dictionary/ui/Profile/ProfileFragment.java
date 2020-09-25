@@ -76,8 +76,22 @@ public class ProfileFragment extends Fragment {
                 rateIt();
             }
         });
+
+        RelativeLayout settings_layout = root.findViewById(R.id.settings_layout);
+        settings_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent settings_intent = new Intent(getContext(), SettingsActivity.class);
+                startActivity(settings_intent);
+            }
+        });
+
+
         return root;
     }
+
+
+
     public void rateIt(){
         final Dialog rate_it_dialouge = new Dialog(getContext());
         rate_it_dialouge.requestWindowFeature(Window.FEATURE_NO_TITLE);
