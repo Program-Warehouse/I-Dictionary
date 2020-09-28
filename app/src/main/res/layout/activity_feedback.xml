@@ -53,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Feature"
+                android:layout_marginBottom="2dp"
                 android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
 
@@ -61,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Interface"
+                android:layout_marginBottom="2dp"
                 android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
 
@@ -69,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Bug"
+                android:layout_marginBottom="2dp"
                 android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
 
@@ -77,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Other"
+                android:layout_marginBottom="2dp"
                 android:buttonTint="@color/colorPrimary"
                 android:textSize="20sp" />
     </RadioGroup>

@@ -20,6 +20,7 @@ import com.example.i_dictionary.FeedbackActivity;
 import com.example.i_dictionary.PrivacyPolicyActivity;
 import com.example.i_dictionary.R;
 import com.example.i_dictionary.SatisfactionSurveyActivity;
+import com.example.i_dictionary.SettingsActivity;
 
 public class ProfileFragment extends Fragment {
 

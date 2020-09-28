@@ -20,7 +20,7 @@ public class SatisfactionSurveyActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.satisfaction_survey_menu, menu);
+        getMenuInflater().inflate(R.menu.send_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

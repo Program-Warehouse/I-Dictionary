@@ -1,4 +1,4 @@
-package com.example.i_dictionary.ui.Profile;
+package com.example.i_dictionary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
