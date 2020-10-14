@@ -94,7 +94,8 @@
                     android:text="Enter Words or Sentences"
                     android:alpha="0.5"
                     android:textSize="23sp"
-                    android:paddingLeft="20dp"/>
+                    android:paddingLeft="20dp"
+                    android:layout_marginEnd="70dp" />
             </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"

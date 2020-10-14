@@ -14,9 +14,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.i_dictionary.EnterWordOrSentenceActivity;
+
+import com.example.i_dictionary.MainActivity;
 import com.example.i_dictionary.R;
 
 public class HomeFragment extends Fragment {
+
 
     private HomeViewModel homeViewModel;
 
@@ -43,6 +46,11 @@ public class HomeFragment extends Fragment {
                 startActivity(enter_word_or_sentance_edittext_intent);
             }
         });
+
         return root;
     }
+
+
+
+
 }
