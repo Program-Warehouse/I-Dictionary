@@ -91,8 +91,9 @@
                     android:layout_marginRight="70dp"
                     android:textCursorDrawable="@color/colorPrimary"
                     android:background="#ffffff"
-                    android:text="Enter Words or Sentences"
+                    android:hint="Enter Words or Sentences"
                     android:alpha="0.5"
+                    android:focusable="false"
                     android:textSize="23sp"
                     android:paddingLeft="20dp"
                     android:layout_marginEnd="70dp" />

@@ -39,7 +39,7 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
     Button b;
     Context context;
     SearchView enter_word_or_sentance_edittext_main;
-    static TextView t5;
+    static TextView t5, type;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -53,6 +53,7 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
         TextView selected_language1 = findViewById(R.id.selected_language1);
         TextView selected_language2 = findViewById(R.id.selected_language2);
         t5 = findViewById(R.id.textView5);
+        type = findViewById(R.id.textViewType);
 
         ImageView back_img = findViewById(R.id.back_button_img);
         back_img.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +67,6 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
         });
 
         enter_word_or_sentance_edittext_main = findViewById(R.id.enter_word_or_sentance_edittext_main);
-
 
         enter_word_or_sentance_edittext_main.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -134,12 +134,6 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
         return false;
     }
 
-
-
-
-
-
-
     public static class IDictionaryRequest extends AsyncTask<String, Integer, String> {
 
         final String app_id = "8012edd5";
@@ -195,6 +189,7 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
             JSONObject resultsJSONObject = results.getJSONObject(0);
 
             JSONArray lexicalEntries = resultsJSONObject.getJSONArray("lexicalEntries");
+
             JSONObject lexicalEntriesJSONObject = lexicalEntries.getJSONObject(0);
 
             JSONArray entries = lexicalEntriesJSONObject.getJSONArray("entries");
@@ -211,28 +206,22 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
                     JSONArray subsenses = sensesJSONObject.getJSONArray("subsenses");
                     JSONObject subsensesJSONObject = subsenses.getJSONObject(0);
                     JSONArray subdefinitions = subsensesJSONObject.getJSONArray("definitions");
+                    JSONObject lexicalCategory = (JSONObject) lexicalEntriesJSONObject.get("lexicalCategory");
+                    Log.d("testing", "testing: " + lexicalCategory.get("text"));
                     dr.add(subdefinitions.getString(0));
                     StringBuilder r = new StringBuilder();
                     for(int i = 0; i<dr.size(); i++){
                         r.append(". ").append(dr.get(i));
                     }
+                    type.setText(String.valueOf(lexicalCategory.get("text")));
                     t5.setText(r);
                 }
                 catch (Exception e){}
             }
-
-
-
-
-
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         }
     }
-
-
 }

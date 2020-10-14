@@ -29,14 +29,6 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         RelativeLayout enter_word_or_sentence_layout = root.findViewById(R.id.enter_word_or_sentance_layout);
-        enter_word_or_sentence_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent enter_word_or_sentance_intent = new Intent(getContext(), EnterWordOrSentenceActivity.class);
-                enter_word_or_sentance_intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(enter_word_or_sentance_intent);
-            }
-        });
         EditText enter_word_or_sentance_edittext = root.findViewById(R.id.enter_word_or_sentance_edittext);
         enter_word_or_sentance_edittext.setOnClickListener(new View.OnClickListener() {
             @Override
