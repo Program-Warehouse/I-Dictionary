@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.AudioAttributes;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,12 +17,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 import org.json.JSONArray;
@@ -28,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Objects;
@@ -44,6 +46,9 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
     SearchView enter_word_or_sentance_edittext_main;
     static LinearLayout result_linear_layout;
     static TextView result_word;
+    static String url_audio = "";
+    static MediaPlayer pronunciation_sound;
+
 
 
 
@@ -60,6 +65,16 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
         TextView selected_language1 = findViewById(R.id.selected_language1);
         TextView selected_language2 = findViewById(R.id.selected_language2);
         result_linear_layout = findViewById(R.id.result_linear_layout);
+        ImageButton ic_pronunciation_sound = findViewById(R.id.ic_pronunciation_sound);
+        ic_pronunciation_sound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(url_audio.length()!=0){
+                    play_pronunciation(url_audio);
+                }
+            }
+        });
+
 
 
 
@@ -123,6 +138,7 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void sendrequest(){
         IDictionaryRequest iDictionaryRequest = new IDictionaryRequest(EnterWordOrSentenceActivity.this);
         iDictionaryRequest.execute(url_entry);
@@ -145,6 +161,13 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
         final String strictMatch = "false";
         final String word_id = word.toLowerCase();
         return "https://od-api.oxforddictionaries.com/api/v2/" + fields + "/" + l_source + "/" + l_target + "/" + word_id + "?strictMatch=" + strictMatch;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void play_pronunciation(String url_audio) {
+        pronunciation_sound.start();
+        pronunciation_sound.release();
+        pronunciation_sound = null;
     }
 
 
@@ -193,6 +216,7 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
 
 
 
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -264,8 +288,27 @@ public class EnterWordOrSentenceActivity extends AppCompatActivity {
                         tv2.setText(definitions.getString(0));
                         tv.setText(type);
                     }
+
+                    lexicalEntriesJSONObject = lexicalEntries.getJSONObject(0);
+                    JSONArray entries_audio = lexicalEntriesJSONObject.getJSONArray("entries");
+                    JSONObject entriesJSONObject_audio = entries_audio.getJSONObject(0);
+                    JSONArray pronunciations = entriesJSONObject_audio.getJSONArray("pronunciations");
+                    JSONObject pronunciationsJSONObject_audio = pronunciations.getJSONObject(0);
+
+
+                    url_audio = pronunciationsJSONObject_audio.getString("audioFile");
+                    Log.v("au", url_audio);
+                    pronunciation_sound = new MediaPlayer();
+                    pronunciation_sound.setAudioAttributes(
+                            new AudioAttributes.Builder()
+                                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                                    .build()
+                    );
+                    pronunciation_sound.setDataSource(url_audio);
+                    pronunciation_sound.prepare();
                 }
-            } catch (JSONException e) {
+            } catch (JSONException | IOException e) {
                 e.printStackTrace();
             }
 

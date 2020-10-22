@@ -91,6 +91,49 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:id="@+id/result_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="word"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <ImageButton
+            android:id="@+id/ic_pronunciation_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_thumb_up_black_18dp"
+            android:contentDescription="play pronunciation"
+            android:layout_below="@id/result_word" />
+
+        <ImageButton
+            android:id="@+id/ic_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Bookmark word icon"
+            app:srcCompat="@drawable/ic_thumb_up_black_18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ic_pronunciation_sound"
+            android:layout_toEndOf="@id/ic_pronunciation_sound"
+            android:layout_below="@id/result_word"
+            android:layout_marginTop="8dp"
+            android:textSize="15dp"
+            android:text="en"/>
+
+    </RelativeLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
