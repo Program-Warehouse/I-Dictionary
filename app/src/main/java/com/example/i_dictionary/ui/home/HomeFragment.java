@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment {
                 Intent enter_word_or_sentance_edittext_intent = new Intent(getContext(), EnterWordOrSentenceActivity.class);
                 enter_word_or_sentance_edittext_intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(enter_word_or_sentance_edittext_intent);
+                getActivity().finish();
             }
         });
 
